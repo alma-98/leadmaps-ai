@@ -5,7 +5,9 @@ Building2,
 Globe,
 Mail,
 Save,
-Download
+Download,
+Eye,
+ScanSearch
 } from "lucide-react";
 
 import {useState} from "react";
@@ -13,46 +15,41 @@ import {useState} from "react";
 
 export default function LeadFinder(){
 
-const [keyword,setKeyword]=useState("");
-const [location,setLocation]=useState("");
-const [data,setData]=useState([]);
+const [results,setResults]=useState([]);
 
 
+function searchLead(){
 
-function search(){
-
-setData([
+setResults([
 
 {
-company:"PT Maju Property",
+company:"ABC Property",
 category:"Property",
-location:"Jakarta",
-website:"majuproperty.com",
-email:"info@majuproperty.com",
-status:"Ready"
+website:"abcproperty.com",
+email:"info@abcproperty.com",
+location:"Jakarta"
 },
 
 {
 company:"Digital Agency Indonesia",
-category:"IT Service",
-location:"Jakarta",
-website:"digitalagency.id",
-email:"sales@digitalagency.id",
-status:"Verified"
+category:"IT",
+website:"digital.id",
+email:"sales@digital.id",
+location:"Bandung"
 },
 
 {
-company:"Bengkel Auto Jaya",
+company:"Auto Service",
 category:"Automotive",
-location:"Tangerang",
-website:"autojaya.com",
-email:"cs@autojaya.com",
-status:"New"
+website:"autoservice.com",
+email:"cs@autoservice.com",
+location:"Tangerang"
 }
 
 ]);
 
 }
+
 
 
 return (
@@ -67,7 +64,7 @@ return (
 </h1>
 
 <p>
-Cari bisnis potensial dari Google Maps dan website
+Find business leads and collect email database
 </p>
 
 </div>
@@ -83,40 +80,50 @@ Business Search
 </h2>
 
 
-<div className="finder">
+
+<div className="search-box">
 
 
-<div>
+<div className="search-input">
 
 <Search/>
 
 <input
 placeholder="Contoh: Bengkel Mobil"
-value={keyword}
-onChange={(e)=>setKeyword(e.target.value)}
 />
 
 </div>
 
-
-<div>
-
-<MapPin/>
-
-<input
-placeholder="Jakarta"
-value={location}
-onChange={(e)=>setLocation(e.target.value)}
-/>
-
-</div>
 
 
 
 <select>
 
 <option>
-Semua Kategori
+📍 Semua Lokasi
+</option>
+
+<option>
+Jakarta
+</option>
+
+<option>
+Bandung
+</option>
+
+<option>
+Tangerang
+</option>
+
+</select>
+
+
+
+
+<select>
+
+<option>
+🏢 Semua Kategori
 </option>
 
 <option>
@@ -124,22 +131,48 @@ Property
 </option>
 
 <option>
-Restaurant
-</option>
-
-<option>
 Automotive
 </option>
 
 <option>
-IT
+Restaurant
 </option>
+
+<option>
+IT Service
+</option>
+
 
 </select>
 
 
 
-<button onClick={search}>
+
+<select>
+
+<option>
+Jumlah Lead
+</option>
+
+<option>
+100
+</option>
+
+<option>
+500
+</option>
+
+<option>
+1000
+</option>
+
+
+</select>
+
+
+
+
+<button onClick={searchLead}>
 
 <Search/>
 
@@ -163,18 +196,26 @@ Find Leads
 <div className="panel">
 
 
-<div className="title-row">
+<div className="table-header">
+
+<div>
 
 <h2>
 Lead Results
 </h2>
+
+<p>
+Total ditemukan: {results.length}
+</p>
+
+</div>
 
 
 <button>
 
 <Download/>
 
-Export
+Export CSV
 
 </button>
 
@@ -184,7 +225,9 @@ Export
 
 
 
+
 <table>
+
 
 <thead>
 
@@ -207,10 +250,6 @@ Email
 </th>
 
 <th>
-Status
-</th>
-
-<th>
 Action
 </th>
 
@@ -220,11 +259,12 @@ Action
 </thead>
 
 
+
 <tbody>
 
 
 {
-data.map((item,index)=>(
+results.map((lead,index)=>(
 
 <tr key={index}>
 
@@ -233,54 +273,79 @@ data.map((item,index)=>(
 
 <Building2/>
 
-{item.company}
+{lead.company}
+
+<br/>
+
+<small>
+{lead.location}
+</small>
 
 </td>
 
 
-<td>
-{item.category}
-</td>
-
 
 <td>
 
-<Globe/>
+<span className="category">
 
-{item.website}
-
-</td>
-
-
-<td>
-
-<Mail/>
-
-{item.email}
-
-</td>
-
-
-<td>
-
-<span className="badge">
-
-{item.status}
+{lead.category}
 
 </span>
 
 </td>
 
 
+
 <td>
 
-<button>
+<Globe/>
+
+{lead.website}
+
+</td>
+
+
+
+<td>
+
+<Mail/>
+
+{lead.email}
+
+</td>
+
+
+
+<td>
+
+
+<div className="actions">
+
+
+<button className="view">
+
+<Eye/>
+
+</button>
+
+
+<button className="scan">
+
+<ScanSearch/>
+
+</button>
+
+
+<button className="save">
 
 <Save/>
 
-CRM
-
 </button>
+
+
+</div>
+
 
 </td>
 
@@ -290,7 +355,6 @@ CRM
 
 ))
 }
-
 
 
 </tbody>
@@ -303,9 +367,8 @@ CRM
 
 
 
-
-
 </div>
+
 
 )
 
