@@ -1,70 +1,60 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+BrowserRouter,
+Routes,
+Route
+} from "react-router-dom";
 
-import Login from "./pages/Login";
+import Layout from "./layouts/Layout";
+
 import Dashboard from "./pages/Dashboard";
 import LeadFinder from "./pages/LeadFinder";
-import EmailExtractor from "./pages/EmailExtractor";
-import CRM from "./pages/CRM";
-import ProtectedRoute from "./components/ProtectedRoute";
+import Leads from "./pages/Leads";
+import EmailCRM from "./pages/EmailCRM";
+import Campaign from "./pages/Campaign";
+import Templates from "./pages/Templates";
+import AI from "./pages/AI";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
 
-export default function App() {
+import "./index.css";
 
-  return (
 
-    <BrowserRouter>
+export default function App(){
 
-      <Routes>
+return (
 
-        <Route
-          path="/"
-          element={<Navigate to="/dashboard" />}
-        />
+<BrowserRouter>
 
-        <Route
-          path="/login"
-          element={<Login />}
-        />
+<Routes>
 
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+<Route element={<Layout/>}>
 
-        <Route
-          path="/leads"
-          element={
-            <ProtectedRoute>
-              <LeadFinder />
-            </ProtectedRoute>
-          }
-        />
+<Route path="/" element={<Dashboard/>}/>
 
-        <Route
-          path="/extractor"
-          element={
-            <ProtectedRoute>
-              <EmailExtractor />
-            </ProtectedRoute>
-          }
-        />
+<Route path="/dashboard" element={<Dashboard/>}/>
 
-        <Route
-          path="/crm"
-          element={
-            <ProtectedRoute>
-              <CRM />
-            </ProtectedRoute>
-          }
-        />
+<Route path="/lead-finder" element={<LeadFinder/>}/>
 
-      </Routes>
+<Route path="/leads" element={<Leads/>}/>
 
-    </BrowserRouter>
+<Route path="/email-crm" element={<EmailCRM/>}/>
 
-  );
+<Route path="/campaign" element={<Campaign/>}/>
+
+<Route path="/templates" element={<Templates/>}/>
+
+<Route path="/ai" element={<AI/>}/>
+
+<Route path="/reports" element={<Reports/>}/>
+
+<Route path="/settings" element={<Settings/>}/>
+
+</Route>
+
+</Routes>
+
+</BrowserRouter>
+
+)
 
 }

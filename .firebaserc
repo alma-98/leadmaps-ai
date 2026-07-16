@@ -3,6 +3,14 @@
     "default": "leadmaps-ai-98",
     "leadmaps-ai": "leadmaps-ai-98"
   },
-  "targets": {},
+  "targets": {
+    "leadmaps-ai-98": {
+      "hosting": {
+        "main": [
+          "leadmaps-ai"
+        ]
+      }
+    }
+  },
   "etags": {}
 }
