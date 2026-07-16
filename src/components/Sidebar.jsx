@@ -15,35 +15,42 @@ import {Link} from "react-router-dom";
 
 export default function Sidebar(){
 
+const menus=[
+["/dashboard","Dashboard",LayoutDashboard],
+["/lead-finder","Lead Finder",Search],
+["/leads","Lead CRM",Users],
+["/email-crm","Email CRM",Mail],
+["/campaign","Campaign",Send],
+["/templates","Templates",Sparkles],
+["/ai","AI Assistant",Bot],
+["/reports","Reports",BarChart3],
+["/settings","Settings",Settings],
+];
+
+
 return (
 
-<div className="sidebar">
+<aside className="sidebar">
 
-<h2>
+<div className="brand">
 🚀 LeadMaps AI
-</h2>
-
-
-<Link to="/dashboard"><LayoutDashboard/> Dashboard</Link>
-
-<Link to="/lead-finder"><Search/> Lead Finder</Link>
-
-<Link to="/leads"><Users/> Lead CRM</Link>
-
-<Link to="/email-crm"><Mail/> Email CRM</Link>
-
-<Link to="/campaign"><Send/> Campaign</Link>
-
-<Link to="/templates"><Sparkles/> Templates</Link>
-
-<Link to="/ai"><Bot/> AI Assistant</Link>
-
-<Link to="/reports"><BarChart3/> Reports</Link>
-
-<Link to="/settings"><Settings/> Settings</Link>
-
-
 </div>
+
+
+{menus.map(([url,name,Icon])=>(
+
+<Link key={url} to={url}>
+
+<Icon size={20}/>
+
+{name}
+
+</Link>
+
+))}
+
+
+</aside>
 
 )
 

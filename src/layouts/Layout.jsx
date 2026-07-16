@@ -6,15 +6,16 @@ export default function Layout(){
 
 return (
 
-<div className="layout">
+<div className="app">
 
 <Sidebar/>
 
-<main className="main">
+<div className="content">
 
 <Outlet/>
 
-</main>
+</div>
+
 
 </div>
 
