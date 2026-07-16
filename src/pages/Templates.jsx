@@ -1,27 +1,73 @@
+
 export default function Templates(){
 
 return(
 
 <div>
 
-<header className="hero">
+<div className="hero">
 
-<h1>✍ AI Email Templates</h1>
+<h1>✍ AI Templates</h1>
 
-<p>
-LeadMaps AI Module
-</p>
+<p>LeadMaps AI Management</p>
 
-</header>
+</div>
 
 
 <div className="panel">
 
-<h2>✍ AI Email Templates</h2>
 
-<p>
-Feature page ready.
-</p>
+<div className="filter">
+
+<input placeholder="Search"/>
+
+
+<select>
+<option>All Category</option>
+</select>
+
+
+<button>
+Search
+</button>
+
+</div>
+
+
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+
+<tr>
+
+<td>Sample Data</td>
+
+<td>email@example.com</td>
+
+<td>Active</td>
+
+
+<td>
+
+<button>View</button>
+
+<button>Edit</button>
+
+</td>
+
+
+</tr>
+
+
+</table>
+
 
 </div>
 
@@ -31,3 +77,4 @@ Feature page ready.
 )
 
 }
+

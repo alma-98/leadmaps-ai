@@ -1,49 +1,28 @@
+import Card from "../components/Card";
+
 export default function Dashboard(){
-
-return(
-<Page 
-title="🚀 LeadMaps AI Dashboard"
-items={[
-["Total Leads","25,480"],
-["Website Scanned","12,450"],
-["Email Found","18,920"],
-["Campaign","120"]
-]}
-/>
-)
-
-}
-
-function Page({title,items}){
 
 return(
 
 <div>
 
-<header className="hero">
+<div className="hero">
 
-<h1>{title}</h1>
+<h1>🚀 LeadMaps AI Dashboard</h1>
 
 <p>
-AI Lead Generation & Email Automation Platform
+AI Lead Generation & Email Automation
 </p>
 
-</header>
+</div>
 
 
 <div className="cards">
 
-{items.map((x,i)=>(
-
-<div className="card" key={i}>
-
-<h3>{x[0]}</h3>
-
-<h1>{x[1]}</h1>
-
-</div>
-
-))}
+<Card title="Total Leads" value="25,480"/>
+<Card title="Website Scan" value="12,450"/>
+<Card title="Email Found" value="18,920"/>
+<Card title="Campaign" value="120"/>
 
 </div>
 
@@ -67,7 +46,6 @@ AI Lead Generation & Email Automation Platform
 </tr>
 
 </table>
-
 
 </div>
 
