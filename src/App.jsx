@@ -4,15 +4,15 @@ Routes,
 Route
 } from "react-router-dom";
 
-import Layout from "./layouts/Layout";
+import DashboardLayout from "./layouts/DashboardLayout";
 
 import Dashboard from "./pages/Dashboard";
 import LeadFinder from "./pages/LeadFinder";
-import Leads from "./pages/Leads";
+import LeadCRM from "./pages/LeadCRM";
 import EmailCRM from "./pages/EmailCRM";
 import Campaign from "./pages/Campaign";
 import Templates from "./pages/Templates";
-import AI from "./pages/AI";
+import AIAssistant from "./pages/AIAssistant";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 
@@ -27,26 +27,17 @@ return(
 
 <Routes>
 
-<Route element={<Layout/>}>
+<Route element={<DashboardLayout/>}>
 
 <Route path="/" element={<Dashboard/>}/>
-
 <Route path="/dashboard" element={<Dashboard/>}/>
-
 <Route path="/lead-finder" element={<LeadFinder/>}/>
-
-<Route path="/leads" element={<Leads/>}/>
-
+<Route path="/lead-crm" element={<LeadCRM/>}/>
 <Route path="/email-crm" element={<EmailCRM/>}/>
-
 <Route path="/campaign" element={<Campaign/>}/>
-
 <Route path="/templates" element={<Templates/>}/>
-
-<Route path="/ai" element={<AI/>}/>
-
+<Route path="/ai-assistant" element={<AIAssistant/>}/>
 <Route path="/reports" element={<Reports/>}/>
-
 <Route path="/settings" element={<Settings/>}/>
 
 </Route>
