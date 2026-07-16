@@ -136,3 +136,78 @@ display:none;
 
 }
 
+
+
+.finder{
+
+display:flex;
+gap:15px;
+align-items:center;
+
+}
+
+
+.finder div{
+
+display:flex;
+align-items:center;
+gap:10px;
+background:#f8fafc;
+padding:15px;
+border-radius:12px;
+flex:1;
+
+}
+
+
+.finder input{
+
+border:0;
+outline:none;
+background:none;
+width:100%;
+
+}
+
+
+
+.finder select{
+
+padding:15px;
+border-radius:12px;
+border:1px solid #ddd;
+
+}
+
+
+
+.title-row{
+
+display:flex;
+justify-content:space-between;
+
+}
+
+
+
+.badge{
+
+background:#dcfce7;
+color:#166534;
+padding:8px 15px;
+border-radius:20px;
+
+}
+
+
+
+@media(max-width:900px){
+
+.finder{
+
+flex-direction:column;
+
+}
+
+}
+
