@@ -2,18 +2,56 @@ export default function Leads(){
 
 return (
 
-<div>
+<div className="page">
 
-<h1>Leads</h1>
+<div className="page-header">
+
+<h1>👥 Lead CRM Database</h1>
+
+<p>
+LeadMaps AI Lead CRM Database Management System
+</p>
+
+</div>
 
 
 <div className="panel">
 
-<h2>LeadMaps AI Leads Module</h2>
+<h2>
+Lead CRM Database
+</h2>
+
 
 <p>
-Halaman siap dikembangkan.
+Module Lead CRM Database siap digunakan.
 </p>
+
+
+<div className="feature-grid">
+
+<div className="feature">
+Total Data
+<br/>
+12,500
+</div>
+
+
+<div className="feature">
+Status
+<br/>
+Active
+</div>
+
+
+<div className="feature">
+Automation
+<br/>
+AI Enabled
+</div>
+
+
+</div>
+
 
 </div>
 
