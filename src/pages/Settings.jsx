@@ -1,45 +1,27 @@
-
 export default function Settings(){
 
-return (
+return(
 
 <div>
 
+<header className="hero">
 
-<div className="hero">
-
-<h1>
-⚙ Settings
-</h1>
+<h1>⚙ System Settings</h1>
 
 <p>
-LeadMaps AI Professional Module
+LeadMaps AI Module
 </p>
 
-</div>
+</header>
 
 
+<div className="panel">
 
-<div className="box">
-
-
-<h2>
-⚙ Settings
-</h2>
-
+<h2>⚙ System Settings</h2>
 
 <p>
-Manage your leads and automation here.
+Feature page ready.
 </p>
-
-
-
-<div className="feature">
-
-Active System
-
-</div>
-
 
 </div>
 
@@ -49,4 +31,3 @@ Active System
 )
 
 }
-

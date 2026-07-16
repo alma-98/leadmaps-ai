@@ -1,45 +1,27 @@
-
 export default function Templates(){
 
-return (
+return(
 
 <div>
 
+<header className="hero">
 
-<div className="hero">
-
-<h1>
-✍ AI Templates
-</h1>
+<h1>✍ AI Email Templates</h1>
 
 <p>
-LeadMaps AI Professional Module
+LeadMaps AI Module
 </p>
 
-</div>
+</header>
 
 
+<div className="panel">
 
-<div className="box">
-
-
-<h2>
-✍ AI Templates
-</h2>
-
+<h2>✍ AI Email Templates</h2>
 
 <p>
-Manage your leads and automation here.
+Feature page ready.
 </p>
-
-
-
-<div className="feature">
-
-Active System
-
-</div>
-
 
 </div>
 
@@ -49,4 +31,3 @@ Active System
 )
 
 }
-

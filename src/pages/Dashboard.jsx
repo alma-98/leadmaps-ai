@@ -1,187 +1,58 @@
-import {
-Users,
-Globe,
-Mail,
-Send,
-TrendingUp,
-Search,
-Upload,
-Sparkles,
-Database
-} from "lucide-react";
-
-
 export default function Dashboard(){
 
-return (
+return(
+<Page 
+title="🚀 LeadMaps AI Dashboard"
+items={[
+["Total Leads","25,480"],
+["Website Scanned","12,450"],
+["Email Found","18,920"],
+["Campaign","120"]
+]}
+/>
+)
 
-<div className="dashboard">
+}
 
+function Page({title,items}){
 
-<section className="welcome">
+return(
 
 <div>
 
-<h1>
-🚀 Welcome Alma 👋
-</h1>
+<header className="hero">
+
+<h1>{title}</h1>
 
 <p>
-LeadMaps AI - AI Lead Generation & Email Automation Platform
+AI Lead Generation & Email Automation Platform
 </p>
 
+</header>
+
+
+<div className="cards">
+
+{items.map((x,i)=>(
+
+<div className="card" key={i}>
+
+<h3>{x[0]}</h3>
+
+<h1>{x[1]}</h1>
+
 </div>
 
-
-<div className="top-action">
-
-<button>
-Scan Website
-</button>
-
-<button>
-Find Leads
-</button>
+))}
 
 </div>
-
-
-</section>
-
-
-
-
-
-<section className="stats">
-
-
-<Stat
-icon={<Users/>}
-title="Total Leads"
-value="25,480"
-desc="+12% bulan ini"
-/>
-
-
-<Stat
-icon={<Globe/>}
-title="Website Scanned"
-value="12,450"
-desc="AI Scanner Active"
-/>
-
-
-<Stat
-icon={<Mail/>}
-title="Email Found"
-value="18,920"
-desc="15,640 Valid"
-/>
-
-
-<Stat
-icon={<Send/>}
-title="Campaign Sent"
-value="120"
-desc="89% Open Rate"
-/>
-
-
-</section>
-
-
-
-
-
-<div className="dashboard-grid">
-
 
 
 <div className="panel">
 
-<h2>
-📈 Lead Growth
-</h2>
-
-
-<div className="chart">
-
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-
-</div>
-
-
-</div>
-
-
-
-
-
-<div className="panel scanner">
-
-<h2>
-🌐 Website Scanner
-</h2>
-
-
-<div className="status">
-
-🟢 Running
-
-</div>
-
-
-<p>
-Queue Website:
-<b> 250</b>
-</p>
-
-
-<p>
-Completed:
-<b> 1,240</b>
-</p>
-
-
-<p>
-Email Found:
-<b> 860</b>
-</p>
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<div className="dashboard-grid">
-
-
-
-<div className="panel">
-
-
-<h2>
-👥 Recent Leads
-</h2>
-
+<h2>Recent Leads</h2>
 
 <table>
-
-<thead>
 
 <tr>
 <th>Company</th>
@@ -189,35 +60,11 @@ Email Found:
 <th>Status</th>
 </tr>
 
-</thead>
-
-
-<tbody>
-
-
 <tr>
 <td>ABC Property</td>
 <td>info@abc.com</td>
-<td>New</td>
-</tr>
-
-
-<tr>
-<td>Digital Agency</td>
-<td>sales@digital.id</td>
-<td>Contacted</td>
-</tr>
-
-
-<tr>
-<td>Bengkel Auto</td>
-<td>cs@auto.com</td>
 <td>Ready</td>
 </tr>
-
-
-</tbody>
-
 
 </table>
 
@@ -225,223 +72,8 @@ Email Found:
 </div>
 
 
-
-
-
-
-<div className="panel">
-
-
-<h2>
-📧 Campaign Performance
-</h2>
-
-
-<div className="metric">
-
-Sent
-<strong>
-5000
-</strong>
-
-</div>
-
-
-<div className="metric">
-
-Opened
-<strong>
-3200
-</strong>
-
-</div>
-
-
-<div className="metric">
-
-Reply
-<strong>
-120
-</strong>
-
-</div>
-
-
-
-</div>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div className="panel ai-panel">
-
-
-<Sparkles size={35}/>
-
-
-<h2>
-🤖 AI Recommendation
-</h2>
-
-
-<p>
-
-Anda memiliki 250 lead kategori Property
-yang siap dibuatkan campaign.
-
-</p>
-
-
-<button>
-Create Email Campaign
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div className="panel">
-
-
-<h2>
-CRM Pipeline
-</h2>
-
-
-
-<div className="pipeline">
-
-
-<div>
-New Lead
-<b>540</b>
-</div>
-
-
-<div>
-Contacted
-<b>320</b>
-</div>
-
-
-<div>
-Interested
-<b>120</b>
-</div>
-
-
-<div>
-Customer
-<b>45</b>
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div className="quick">
-
-
-<h2>
-Quick Action
-</h2>
-
-
-<div className="quick-grid">
-
-
-<Action icon={<Search/>} text="Find Leads"/>
-
-<Action icon={<Database/>} text="Open CRM"/>
-
-<Action icon={<Upload/>} text="Import CSV"/>
-
-
-</div>
-
-
-</div>
-
-
-
 </div>
 
 )
 
 }
-
-
-
-
-function Stat({icon,title,value,desc}){
-
-return (
-
-<div className="stat-card">
-
-{icon}
-
-<h3>
-{title}
-</h3>
-
-
-<h1>
-{value}
-</h1>
-
-
-<p>
-{desc}
-</p>
-
-
-</div>
-
-)
-
-}
-
-
-
-
-function Action({icon,text}){
-
-return (
-
-<div className="action">
-
-{icon}
-
-{text}
-
-</div>
-
-)
-
-}
-

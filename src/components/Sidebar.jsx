@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import {
 LayoutDashboard,
 Search,
@@ -10,12 +11,10 @@ BarChart3,
 Settings
 } from "lucide-react";
 
-import {Link} from "react-router-dom";
-
 
 export default function Sidebar(){
 
-const menus=[
+const menu=[
 ["/dashboard","Dashboard",LayoutDashboard],
 ["/lead-finder","Lead Finder",Search],
 ["/leads","Lead CRM",Users],
@@ -24,22 +23,20 @@ const menus=[
 ["/templates","Templates",Sparkles],
 ["/ai","AI Assistant",Bot],
 ["/reports","Reports",BarChart3],
-["/settings","Settings",Settings],
+["/settings","Settings",Settings]
 ];
 
 
-return (
+return(
 
 <aside className="sidebar">
 
-<div className="brand">
-🚀 LeadMaps AI
-</div>
+<h2>🚀 LeadMaps AI</h2>
 
 
-{menus.map(([url,name,Icon])=>(
+{menu.map(([url,name,Icon])=>(
 
-<Link key={url} to={url}>
+<Link to={url} key={url}>
 
 <Icon size={20}/>
 
