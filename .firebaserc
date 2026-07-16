@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "leadmaps-ai-98"
-  }
+    "default": "leadmaps-ai-98",
+    "leadmaps-ai": "leadmaps-ai-98"
+  },
+  "targets": {},
+  "etags": {}
 }
